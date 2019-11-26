@@ -15,15 +15,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+                                                                                     //現在activity
         NotificationManager notificationmanager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+                        //(跟管理者說我現在這個activity要做通知服務)                                        //通知服務
+                                                   //NotificationManager來自系統服務getSystemService
         //通知一設定
         NotificationChannel notificationchannel = new NotificationChannel(
+                                   //通知服務從channel設定
+
                 strilove,"def",
-                NotificationManager.IMPORTANCE_HIGH);
+                NotificationManager.IMPORTANCE_HIGH);//最高權限
                 notificationchannel.setDescription("ghijk");
                 notificationchannel.enableLights(true);
-                notificationchannel.enableVibration(true);
+                notificationchannel.enableVibration(true);//震動
 
                 //依設定建立通知
         notificationmanager.createNotificationChannel(notificationchannel);
@@ -36,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 .setAutoCancel(true);
         //啟動通知
         notificationmanager.notify(0,builder.build());
+
+
+
+
+
+
 
 
     }
